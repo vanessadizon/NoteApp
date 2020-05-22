@@ -1,0 +1,19 @@
+.cardHeader {
+  border: none;
+  background-color: #f8f9fa;
+  outline: none;
+}
+
+.card-text {
+  outline:none;
+}
+
+.addIcon {
+  cursor: pointer;
+}
+
+textarea {
+  height: auto;
+  width: 100%;
+  border: none;
+}

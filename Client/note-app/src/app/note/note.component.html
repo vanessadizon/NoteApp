@@ -1,0 +1,29 @@
+<div class="card-columns">
+  <div>
+    <span *ngIf="notes.length === 0 && selectedNotebook === -1" class="alert-info">No created notes yet. </span>
+  </div>
+  <div class="card" *ngIf="selectedNotebook !== -1">
+    <div class="card-header">
+      <input #newNoteTitle  class="cardHeader" type="text" placeholder="Enter title here..." [textContent]=""/>
+      <fa-icon class="addIcon float-right" (click)="addNote()" [icon]="faPlus"></fa-icon>
+    </div>
+    <div class="card-body">
+      <textarea rows="5" #newNoteContents placeholder="Enter contents here..."></textarea>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"></small>
+    </div>
+  </div>
+  <div class="card" *ngFor="let note of notes | searchFilter:searchValue">
+    <div class="card-header">
+      <input class="cardHeader" type="text" [(ngModel)]="note.title" (change)="updateNote(note)">
+      <fa-icon class="deleteIcon float-right" (click)="deleteNote(note)" [icon]="faTimes"></fa-icon>
+    </div>
+    <div class="card-body">
+      <textarea rows="5" [(ngModel)]="note.contents" class="card-text" (change)="updateNote(note)">{{note.contents}}</textarea>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">{{note.dateModified | date: 'yyyy-MM-dd hh:mm a'}}</small>
+    </div>
+  </div>
+</div>

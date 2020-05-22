@@ -1,0 +1,18 @@
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
+
+.input-label{
+  border: none;
+  background: rgb(0,0,0,0);
+  cursor: pointer;
+  width: 90%;
+}
+
+.deleteIcon{
+  cursor: pointer;
+}

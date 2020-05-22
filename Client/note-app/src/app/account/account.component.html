@@ -1,0 +1,28 @@
+<div class="p-2 d-flex row">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <span><h2>Personal Details</h2></span>
+    <form [formGroup]="accountForm" (ngSubmit)="accountForm.valid && updateAccountDetails()">
+        <label for="id">Account ID: </label>
+        <input type="text" id="id" class="form-control" formControlName="id" disabled />
+        <label for="name">Full Name: </label>
+        <input type="text" id="name" class="form-control" formControlName="name" required />
+        <label for="email">Email Address: </label>
+        <input type="email" id="email"  class="form-control" formControlName="email" email required/>
+        <label for="username">Username: </label>
+        <input type="text" id="username"  class="form-control" formControlName="username" required/>
+        <label for="description">Describe yourself: </label>
+        <textarea id="description" class="form-control" formControlName="description" ></textarea>
+        <br>
+        <button type="submit" class="btn btn-primary float-right">Update</button>
+    </form>
+  </div>
+  <div class="col-sm-4" hidden>
+    <span><h2>Credentials</h2></span>
+      <label for="oldPassword">Password: </label>
+      <input type="password" id="oldPassword" class="form-control" />
+      <label for="newPassword">Password: </label>
+      <input type="password" id="newPassword"  class="form-control" />
+      <button type="submit" class="btn btn-outline-success float-right">Update</button>
+  </div>
+</div>

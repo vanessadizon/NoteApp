@@ -1,0 +1,16 @@
+<div class="list-group list-group-flush">
+  <a href="" class="list-group-item list-group-item-action"> All </a>
+  <a *ngFor="let notebook of notebooks" class="list-group-item list-group-item-action">
+      <input class="input-label"
+           type="text" [(ngModel)]="notebook.notebookName"
+           (change) = "updateNotebook(notebook.notebookId, notebook)" (click)="selectNotebook(notebook.notebookId)"/>
+      <fa-icon class="deleteIcon float-right" (click)="deleteNotebook(notebook)" [icon]="faTimes"></fa-icon>
+  </a>
+  <a class="list-group-item list-group-item-action">
+    <input class="form-control mr-sm-2" #newNotebook
+           type="text"
+           (blur)="addNewNotebook()"
+           (keyup.enter)="addNewNotebook()"
+           placeholder="New Notebook" />
+  </a>
+</div>
